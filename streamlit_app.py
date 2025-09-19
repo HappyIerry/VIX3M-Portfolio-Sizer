@@ -1,18 +1,3 @@
-import subprocess
-import sys
-
-# -----------------------------
-# Auto-install dependencies
-# -----------------------------
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-for pkg in ["yfinance", "pandas", "streamlit"]:
-    try:
-        __import__(pkg)
-    except ImportError:
-        install(pkg)
-
 # -----------------------------
 # Imports
 # -----------------------------
